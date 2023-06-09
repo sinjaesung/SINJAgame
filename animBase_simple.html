@@ -1,0 +1,85 @@
+<script>
+      //console.log("document.referrer;:",document.referrer);
+    let referer=document.referrer;
+    if(referer=="" || referer.length==0){
+        alert("잘못된 접근");
+        location.href='characterSelect_Simple.html'
+    }
+</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="animBase.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three" : "https://sinjaesung.github.io/webPageTest/three.js-master/build/three.module.js"
+            }
+        }
+    </script>
+    <script>
+      
+        //var characterSrc='./data/character3/character3DanceRest3.glb';
+       // var characterSrc='https://github.com/sinjaesung/3DASSET/blob/master/character0another/character0Human2.glb';
+       //console.log("animBase페이지 characterDatabase값 상태 :",localStorage.getItem("characterdatabase"));
+       let character_object=JSON.parse(localStorage.getItem("characterdatabase"));
+       let characterSrc=character_object['characterSrc']
+  
+       //let  characterSrc='https://sinjaesung.github.io/3DASSET/character0another/character0Human2.glb';
+        let inner_secure_database=localStorage.getItem("characterdatabase");
+        localStorage.removeItem('characterdatabase')
+        //console.log("저장해둔 값 타깃다음페이지이동시에 다시 지정하여 보냄.",inner_secure_database)
+        //var decrypt=CryptoJS.enc.Base64.parse(characterSrc);
+        ////console.log("순수decrpypt값:",decrypt);
+        //var hashData=decrypt.toString(CryptoJS.enc.Utf8);
+       // //console.log("디코딩된 값:characterSrc",hashData);
+        //characterSrc=hashData;
+      
+    </script>
+    <script type="module" src="animBaseUse.js" defer></script>
+    <style>
+        .submitNext{position:absolute;bottom:2%;right:5%; width:120px;height:60px;line-height:1.5;font-size:20px; background-color:#8020ef; color:white; cursor:pointer;display:flex;align-items:center;justify-content:center}
+        .submitNext:hover{
+            background-color:#df9040;
+        }
+
+        .prevbtn{
+            position:absolute;bottom:2%;left:5%; width:120px;height:60px;line-height:1.5;font-size:20px; background-color:#8020ef; color:white; cursor:pointer;display:inline-flex;justify-content:center;align-items:center;
+        }
+        .prevbtn:hover{
+            background-color:#9080cd;
+        }
+    </style>
+
+</head>
+<body>
+<div class='container'>
+    <div id="character" class='webglcontainer'>  
+    </div>
+    
+</div>
+ 
+<span class='prevbtn' onclick='javascript:history.back();'>BACK</span>
+<a class='submitNext'id='submitNext' href="AmmoRigidBaseWorldProtected_SimpleArea.html">PLAY</a>
+
+<script>
+let formdatas=document.getElementsByClassName("formdata");
+let character_database={};
+let submitNext=document.getElementById("submitNext");
+
+submitNext.onclick=function(event){
+    //event.preventDefault();
+    // event.preventDefault();
+    //console.log("제출 이벤트당시때의 characterdatabase상태:",event.target,inner_secure_database);
+    
+    localStorage.setItem("characterdatabase",inner_secure_database);
+}
+</script>
+</body>
+</html>
