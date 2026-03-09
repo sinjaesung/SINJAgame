@@ -16,8 +16,8 @@ THREEJS로 개발한 웹게임
 
 ## Screenshots
 
-<img src="GameScreenShot1.PNG" width="500"/>
-<img src="GameScreenShot2.PNG" width="500"/>
+<img src="GameScreenShot1.PNG" width="900"/>
+<img src="GameScreenShot2.PNG" width="900"/>
 <img src="GameScreenShot3.PNG" width="900"/>
 
 ## Gameplay Video
